@@ -1,0 +1,6 @@
+const GLOBAL_CONSTANTS = {
+    CURRENCY: "UAH",
+    TOKEN_EXPIRE_TIME: 60 * 60,
+}
+
+module.exports = GLOBAL_CONSTANTS;

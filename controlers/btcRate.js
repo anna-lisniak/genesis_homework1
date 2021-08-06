@@ -1,9 +1,11 @@
-const axios  = require("axios");
+const fetchBtcRate = require("../services/btcRate");
+const GLOBAL_CONSTANTS = require('../constants');
 
-const getBtcRate = async () => {
-    const result = await axios.get("https://api.coindesk.com/v1/bpi/currentprice/UAH.json");
+const getBtcRate = async (_, res) => {
+    const { bpi } = await fetchBtcRate();
+    const btcRate = bpi[GLOBAL_CONSTANTS.CURRENCY];
 
-    return result.data;
+    res.status(200).json({ btcRate })
 }
 
 module.exports = getBtcRate;

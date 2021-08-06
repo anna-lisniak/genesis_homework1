@@ -1,4 +1,4 @@
-const verifyToken = (req, res, next) => {
+const getToken = (req, res, next) => {//getBearerToken
     if ("btcToken" in req.cookies) {
         req.token = req.cookies.btcToken;
         return next();
@@ -16,5 +16,5 @@ const verifyToken = (req, res, next) => {
 }
 
 module.exports = {
-    verifyToken,
+    getToken,
 }
